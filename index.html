@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة الذاتية | أنس أحمد محمد</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="resume-container">
+        <aside class="sidebar">
+            <div class="profile-header">
+                <img src="profile.jpeg" alt="أنس أحمد محمد" class="profile-img">
+                <h1>أنس أحمد محمد</h1>
+                <p class="tagline">خبير مبيعات وتطوير أعمال</p>
+            </div>
+
+            <section class="side-section">
+                <h3 class="side-heading"><i class="fas fa-id-card"></i> المعلومات الشخصية</h3>
+                <div id="personal-info" class="info-list"></div>
+            </section>
+
+            <section class="side-section">
+                <h3 class="side-heading"><i class="fas fa-quote-right"></i> من أنا ؟</h3>
+                <p id="about-me" class="about-text"></p>
+            </section>
+
+            <section class="side-section">
+                <h3 class="side-heading"><i class="fas fa-star"></i> السمات الشخصية</h3>
+                <ul id="personal-traits" class="bullet-list"></ul>
+            </section>
+
+            <section class="side-section">
+                <h3 class="side-heading"><i class="fas fa-heart"></i> الهوايات</h3>
+                <ul id="hobbies" class="bullet-list"></ul>
+            </section>
+        </aside>
+
+        <main class="main-content">
+            <section class="main-section">
+                <h2 class="main-heading"><i class="fas fa-brain"></i> الخبرات والمهارات العلمية</h2>
+                <div id="scientific-skills" class="details-list"></div>
+            </section>
+
+            <section class="main-section">
+                <h2 class="main-heading"><i class="fas fa-laptop-code"></i> البرامج والأدوات</h2>
+                <div id="tools-apps" class="details-list"></div>
+            </section>
+
+            <section class="main-section">
+                <h2 class="main-heading"><i class="fas fa-history"></i> المسيرة العملية</h2>
+                <div id="work-history" class="details-list"></div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>تاريخ آخر تحديث: <span id="last-update"></span></p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
