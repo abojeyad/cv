@@ -180,18 +180,6 @@ html[lang="en"] .summary { line-height: 1.55; }
     background: var(--sand);
 }
 
-/* ===== الخبرات السابقة ===== */
-.prev-item {
-    display: grid;
-    grid-template-columns: 96px minmax(0, 1fr);
-    gap: 18px;
-    font-size: 0.8rem;
-    padding: 4px 0;
-    border-bottom: 1px dashed var(--line);
-}
-.prev-item:last-child { border-bottom: 0; }
-.prev-period { color: var(--accent); font-weight: 600; white-space: nowrap; }
-
 /* ===== الخبرات والمهارات العلمية ===== */
 .skill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 26px; }
 .skill { break-inside: avoid; padding-inline-start: 10px; border-inline-start: 2px solid var(--accent-soft); }
@@ -258,7 +246,7 @@ html[lang="en"] .summary { line-height: 1.55; }
     .page { padding: 24px 16px; box-shadow: none; }
     .hero { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; }
     .info-grid { grid-template-columns: minmax(0, 1fr); justify-content: stretch; text-align: start; }
-    .job, .prev-item { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+    .job { grid-template-columns: minmax(0, 1fr); gap: 2px; }
     .job::before, .job-body::before { display: none; }
     .skill-grid, .trio { grid-template-columns: 1fr; }
     .tool-group { grid-template-columns: minmax(0, 1fr); gap: 4px; }
@@ -281,15 +269,14 @@ html[lang="en"] .summary { line-height: 1.55; }
     }
     .page { max-width: none; box-shadow: none; padding: 12mm 14mm 8mm;
              -webkit-box-decoration-break: clone; box-decoration-break: clone; }
-    .section { margin-top: 14px; }
+    .section { margin-top: 12px; }
     .job { padding-bottom: 8px; }
-    .footer { margin-top: 10px; padding-top: 6px; }
+    .footer { margin-top: 8px; padding-top: 5px; }
     .hero { padding-bottom: 16px; }
     /* إلغاء تخطيط الجوال عند الطباعة */
     .hero { grid-template-columns: 132px 1fr; justify-items: stretch; text-align: start; }
     .info-grid { grid-template-columns: repeat(3, auto); justify-content: space-between; }
     .skill-grid { grid-template-columns: 1fr 1fr; break-inside: avoid; }
-    .prev-list { break-inside: avoid; }
     .tool-group { grid-template-columns: 150px 1fr; gap: 14px; }
     .trio { grid-template-columns: 1fr 1fr 0.8fr; }
 }

@@ -35,7 +35,7 @@ function render(lang) {
         ['fa-users', p.status]
     ].map(([icon, value]) => `<div class="info-item"><i class="fas ${icon}"></i><span>${value}</span></div>`).join('');
 
-    // 2. الخبرة العملية (خط زمني بالتفصيل)
+    // 2. الخبرة العملية (خط زمني)
     $('experience').innerHTML = d.experience.map(job => `
         <article class="job">
             <div class="job-period">${job.period}</div>
@@ -43,25 +43,18 @@ function render(lang) {
                 <h3 class="job-title">${job.company}</h3>
                 <div class="job-role">${job.role}</div>
                 ${job.note ? `<p class="job-note">${job.note}</p>` : ''}
-                <ul class="job-points">${job.points.map(pt => `<li>${pt}</li>`).join('')}</ul>
+                ${job.points ? `<ul class="job-points">${job.points.map(pt => `<li>${pt}</li>`).join('')}</ul>` : ''}
             </div>
         </article>`).join('');
 
-    // 3. الخبرات السابقة (سطر لكل وظيفة)
-    $('previous').innerHTML = d.previous.map(job => `
-        <div class="prev-item">
-            <span class="prev-period">${job.period}</span>
-            <span><strong>${job.title}</strong> · ${job.role}</span>
-        </div>`).join('');
-
-    // 4. الخبرات والمهارات العلمية
+    // 3. الخبرات والمهارات العلمية
     $('scientific-skills').innerHTML = d.scientific.map(skill => `
         <div class="skill">
             <h3>${skill.title}</h3>
             <p>${skill.desc}</p>
         </div>`).join('');
 
-    // 5. البرامج والأدوات (مجموعات)
+    // 4. البرامج والأدوات (مجموعات)
     $('tools-apps').innerHTML = d.tools.map(group => `
         <div class="tool-group">
             <h3 class="tool-name">${group.group}</h3>
@@ -71,13 +64,13 @@ function render(lang) {
             </div>
         </div>`).join('');
 
-    // 6. المهارات الشخصية والتطوير المهني واللغات
+    // 5. المهارات الشخصية والتطوير المهني واللغات
     $('personal-traits').innerHTML = d.traits.map(t => `<li>${t}</li>`).join('');
     $('development').innerText = d.development;
     $('languages').innerHTML = d.languages
         .map(l => `<li><strong>${l.name}</strong><span>${l.level}</span></li>`).join('');
 
-    // 7. تاريخ آخر تحديث
+    // 6. تاريخ آخر تحديث
     $('last-update').innerText = d.updateDate;
 }
 

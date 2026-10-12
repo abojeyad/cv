@@ -4,9 +4,8 @@ const resumeData = {
         labels: {
             title: "السيرة الذاتية | أنس أحمد محمد",
             experience: "الخبرة العملية",
-            previous: "الخبرات السابقة",
-            scientific: "الخبرات والمهارات العلمية",
-            tools: "البرامج والأدوات",
+            scientific: "مجالات الخبرة",
+            tools: "الأدوات والأنظمة",
             traits: "المهارات الشخصية",
             development: "التطوير المهني",
             languages: "اللغات",
@@ -17,8 +16,8 @@ const resumeData = {
         },
         personal: {
             name: "أنس أحمد محمد",
-            tagline: "إدارة المبيعات وتطوير الأعمال | SaaS والحلول المؤسسية | المنتجات الرقمية",
-            summary: "متخصص في إدارة المبيعات وتطوير الأعمال في قطاع البرمجيات كخدمة (SaaS)، أعمل في بيع أنظمة ERP والمحاسبة والموارد البشرية للشركات، وأسست وأدرت فروعاً في المدينة المنورة والخبر والرياض. شريك مؤسس في منصة يوردس، أقود فيها تطوير المنتج والعمليات. أجمع بين الخبرة التجارية والفهم العملي للأنظمة والبيانات، وأوظّف أدوات الذكاء الاصطناعي في تحويل احتياجات الأعمال إلى حلول تقنية قابلة للتطبيق.",
+            tagline: "إدارة المبيعات وتطوير الأعمال | SaaS والحلول المؤسسية | تطوير المنتجات الرقمية",
+            summary: "مدير منطقة مبيعات في قطاع SaaS، متخصص في بيع الحلول المؤسسية، بما فيها أنظمة ERP والمحاسبة والموارد البشرية للشركات والمؤسسات. أسست فرع المدينة المنورة، وتوليت إدارة ثلاث مناطق في شركة سمارت لايف. شريك مؤسس في منصة يوردس، أقود فيها تطوير المنتج والعمليات. أجمع بين الخبرة التجارية والفهم العملي للأنظمة والبيانات، وأوظّف أدوات الذكاء الاصطناعي في تحويل احتياجات الأعمال إلى حلول تقنية عملية.",
             phone: "0568954677",
             email: "aljahmi2013@gmail.com",
             address: "السعودية - المدينة المنورة",
@@ -27,7 +26,7 @@ const resumeData = {
             status: "متزوج ولدي ولد وبنتان"
         },
 
-        // الخبرة العملية الحالية (بالتفصيل)
+        // الخبرة العملية من الأحدث إلى الأقدم (points اختيارية)
         experience: [
             {
                 company: "سمارت لايف للبرمجيات (SaaS)",
@@ -35,7 +34,8 @@ const resumeData = {
                 period: "2020 – الآن",
                 note: "بدأت التعاون مع الشركة منذ 2018 في جلب المبيعات، ثم انضممت إليها رسمياً في 2020.",
                 points: [
-                    "تأسيس فرع المدينة المنورة، ثم إدارة فرعي الخبر والرياض، والعودة لإدارة فرع المدينة المنورة.",
+                    "تأسيس فرع المدينة المنورة، ثم إدارة منطقتي الخبر والرياض، والعودة لإدارة منطقة المدينة المنورة.",
+                    "تصميم وبناء أول نظام CRM للشركة بشكل مستقل، واعتماد قواعده الأساسية في إدارة العملاء ومتابعة المبيعات.",
                     "إدارة مبيعات أنظمة ERP والمحاسبة والموارد البشرية للشركات والمؤسسات.",
                     "بناء فرق المبيعات وتدريبها، وتطوير أساليب البيع، ومتابعة أداء الفريق والعملاء.",
                     "فتح أسواق جديدة وبناء علاقات طويلة الأمد مع العملاء.",
@@ -49,40 +49,43 @@ const resumeData = {
                 note: "منصة سعودية لمقارنة أسعار العطور الأصلية بين المتاجر الإلكترونية، متاحة على App Store وGoogle Play.",
                 points: [
                     "قيادة المنتج من الفكرة إلى الإطلاق: فهم احتياجات المستخدمين، وتحديد المتطلبات، وترتيب الأولويات.",
-                    "توجيه التطوير التقني بالاستعانة بـ Claude وأدوات الذكاء الاصطناعي، ومراجعة المخرجات واختبارها وتحسينها بصورة منهجية.",
-                    "بناء عمليات البيانات: جمع بيانات المنتجات والأسعار من المتاجر، وتنظيفها وتصنيفها، وأتمتة تحديثها.",
-                    "إعداد لوحات التحليلات ومؤشرات الأداء لمتابعة استخدام المنصة.",
+                    "توجيه التطوير التقني بالاستعانة بأدوات الذكاء الاصطناعي، ومراجعة المخرجات واختبارها وتحسينها بصورة منهجية.",
                     "متابعة التشغيل والعمليات اليومية ضمن فريق المنصة."
                 ]
-            }
-        ],
-
-        // الخبرات السابقة (سطر لكل وظيفة)
-        previous: [
-            { title: "تجارة حرة", role: "مشروع خاص لتوزيع الأحذية", period: "2019 – 2020" },
-            { title: "توصيل جدة", role: "مؤسس ومشرف عمليات توصيل طلبات الأسر المنتجة", period: "2017 – 2019" },
-            { title: "شركة الجونة للحلويات", role: "معلم حلويات", period: "2014 – 2017" },
-            { title: "مؤسسة الشاذلية للتمور", role: "مؤسس وشريك ومدير إنتاج", period: "2011 – 2013" },
-            { title: "شركة تالة الجود للتمور والحلويات", role: "معلم حلويات", period: "2008 – 2010" }
+            },
+            {
+                company: "مجموعة عطا الله المطرفي",
+                role: "مؤسس مشروع توزيع",
+                period: "2019 – 2020",
+                points: ["تأسيس مشروع خاص لتوزيع الأحذية على المحلات التجارية ومنافذ البيع."]
+            },
+            {
+                company: "شركة توصيل جدة",
+                role: "مؤسس ومشرف عمليات",
+                period: "2017 – 2019",
+                points: ["تأسيس شركة توصيل جدة والإشراف على عملياتها في توصيل طلبات الأسر المنتجة."]
+            },
+            { company: "شركة الجونة للحلويات", role: "معلم حلويات", period: "2014 – 2017" },
+            { company: "مؤسسة الشاذلية للتمور", role: "مؤسس وشريك ومدير إنتاج", period: "2011 – 2013" },
+            { company: "شركة تالة الجود للتمور والحلويات", role: "معلم حلويات", period: "2008 – 2010" }
         ],
 
         scientific: [
-            { title: "القيادة والإدارة", desc: "تشكيل فرق العمل وقيادتها، وتوزيع المهام وتوجيهها، وتحفيز الفريق ومتابعة أدائه." },
-            { title: "المبيعات والتسويق", desc: "إدارة دورة البيع كاملة، وخدمة العملاء، ووضع الخطط البيعية والاستهداف." },
-            { title: "الخطط والاستراتيجيات", desc: "بناء الاستراتيجيات التسويقية وتنفيذها، ومراقبة نتائجها وتصحيح مسارها." },
-            { title: "المهارات الحسابية", desc: "إدارة عمليات البيع والتوريد والمخازن، ومراقبة التقارير المالية والإحصائية." },
-            { title: "البرامج المحاسبية", desc: "معرفة واسعة بالأنظمة المحاسبية وآلية العمل عليها، والقدرة على تسويقها وبيعها." },
-            { title: "تحليل البيانات", desc: "تحليل البيانات وفهم المقاييس المختلفة، وتحويلها إلى قرارات واستخدامات عملية." },
-            { title: "المهارات التقنية", desc: "إتقان أجهزة الكمبيوتر والأجهزة الذكية والتطبيقات، وسرعة تعلّم الأدوات الجديدة." }
+            { title: "القيادة وبناء الفرق", desc: "تشكيل فرق العمل وقيادتها وتحفيزها، وتدريب الموظفين ورفع كفاءتهم ونقل الخبرة إليهم." },
+            { title: "مبيعات الشركات (B2B)", desc: "إدارة دورة البيع كاملة مع الشركات والمؤسسات، من تحديد الفرص حتى إغلاق الصفقة وبناء علاقة طويلة الأمد." },
+            { title: "التخطيط والاستراتيجية", desc: "وضع الخطط البيعية والتسويقية وتنفيذها، ومراقبة نتائجها وتصحيح مسارها." },
+            { title: "الأنظمة المحاسبية وERP", desc: "فهم عميق لطريقة عمل الأنظمة المحاسبية وأنظمة ERP، وتحليل ما تحتاجه الشركات منها، وتقديم الحل المناسب لكل عميل." },
+            { title: "تطوير المنتجات الرقمية", desc: "تحويل احتياجات المستخدمين إلى متطلبات واضحة، وترتيب أولويات التطوير، وقياس أثره على تجربة المستخدم." },
+            { title: "تحليل البيانات", desc: "تحليل البيانات والمؤشرات والتقارير الإحصائية، وتحويلها إلى قرارات عملية." }
         ],
 
         tools: [
-            { group: "البيانات والتحليلات", items: ["Google Sheets", "Excel", "Looker Studio"],
-              desc: "دوال متقدمة وربط الملفات والرسوم البيانية، وتقارير ولوحات مؤشرات مباشرة." },
-            { group: "الأتمتة والتطوير", items: ["Google Apps Script", "Claude"],
-              desc: "برمجة الدوال المخصصة وصفحات الويب داخل بيئة Google لأتمتة العمليات، وتطوير الأدوات بالذكاء الاصطناعي." },
-            { group: "استخراج البيانات", items: ["Web Scraping"],
-              desc: "استخراج البيانات من المواقع وتحويلها إلى قواعد بيانات منظمة قابلة للاستخدام." },
+            { group: "البيانات والتحليلات", items: ["Google Sheets", "Excel", "Looker Studio", "GA4"],
+              desc: "استخدام معادلات ودوال متقدمة في Google Sheets وExcel، وإعداد التقارير، وبناء لوحات تحليلات تحوّل البيانات إلى مؤشرات أداء مباشرة." },
+            { group: "الأتمتة وتكامل البيانات", items: ["Google Apps Script", "Web Scraping", "API Integration"],
+              desc: "أتمتة العمليات وبناء الدوال المخصصة داخل بيئة Google، وجمع البيانات من المواقع وتنظيمها في قواعد بيانات، وربط الأنظمة عبر API لمزامنة البيانات وتبادلها." },
+            { group: "التطوير بالذكاء الاصطناعي", items: ["Claude", "Codex", "GitHub"],
+              desc: "قيادة تطوير أنظمة رقمية متكاملة: دراسة المتطلبات، وتصميم الحل واختيار التقنيات المناسبة، ثم البناء بكود حقيقي والاختبار والتوثيق. منها موقع يوردس الرسمي، ونظام معالجة صور المنتجات، ونظام إدارة الملاحظات اليومية، ونظام بيانات العطور." },
             { group: "المنتج والنماذج الأولية", items: ["Figma", "Glide"],
               desc: "تصميم واجهات التطبيقات والمواقع ونماذج أولية تفاعلية، وبناء تطبيقات تشغيلية بعملياتها وتقاريرها." },
             { group: "التصميم والإنتاجية", items: ["Photoshop", "Illustrator", "Word", "Google Slides"],
@@ -90,7 +93,7 @@ const resumeData = {
         ],
 
         traits: [
-            "قيادة الفرق وبناؤها",
+            "المرونة والتكيّف مع بيئات العمل المختلفة",
             "التواصل والتفاوض",
             "حل المشكلات والتفكير التحليلي",
             "التنظيم وإدارة المهام",
@@ -111,9 +114,8 @@ const resumeData = {
         labels: {
             title: "CV | Anas Ahmed Mohammed",
             experience: "Work Experience",
-            previous: "Earlier Experience",
             scientific: "Areas of Expertise",
-            tools: "Tools & Software",
+            tools: "Tools & Systems",
             traits: "Personal Skills",
             development: "Training",
             languages: "Languages",
@@ -124,8 +126,8 @@ const resumeData = {
         },
         personal: {
             name: "Anas Ahmed Mohammed",
-            tagline: "Sales Management & Business Development | SaaS & Enterprise Solutions | Digital Products",
-            summary: "Sales and business development professional in the Software-as-a-Service (SaaS) sector, selling ERP, accounting and HR systems to companies, having founded and managed branches in Madinah, Al Khobar and Riyadh. Co-founder of Yourdis, where I lead product development and operations. I combine commercial experience with a practical understanding of systems and data, and use AI tools to turn business needs into workable technical solutions.",
+            tagline: "Sales Management & Business Development | SaaS & Enterprise Solutions | Digital Product Development",
+            summary: "Area Sales Manager in the SaaS sector, specializing in selling enterprise solutions, including ERP, accounting and HR systems, to companies and organizations. Founded the Madinah branch and went on to manage three regions at Smart Life. Co-founder of Yourdis, where I lead product development and operations. I combine commercial experience with a practical understanding of systems and data, and use AI tools to turn business needs into workable technical solutions.",
             phone: "+966 56 895 4677",
             email: "aljahmi2013@gmail.com",
             address: "Madinah, Saudi Arabia",
@@ -141,7 +143,8 @@ const resumeData = {
                 period: "2020 – Present",
                 note: "Worked with the company as a sales collaborator from 2018, then joined officially in 2020.",
                 points: [
-                    "Founded the Madinah branch, then managed the Al Khobar and Riyadh branches before returning to lead Madinah.",
+                    "Founded the Madinah branch, then managed the Al Khobar and Riyadh regions, and later the Madinah region.",
+                    "Independently built the company's first CRM, setting its core rules for client management and sales tracking.",
                     "Manage sales of ERP, accounting and HR systems to companies and organizations.",
                     "Build and train sales teams, develop sales methods, and track team and client performance.",
                     "Open new markets and build long-term client relationships.",
@@ -152,42 +155,46 @@ const resumeData = {
                 company: "Yourdis",
                 role: "Co-founder, Product Development & Operations Lead",
                 period: "2026 – Present",
-                note: "A Saudi platform comparing prices of authentic perfumes across online stores, available on the App Store and Google Play.",
+                note: "A Saudi price-comparison platform for authentic perfumes, available on the App Store and Google Play.",
                 points: [
-                    "Lead the product from idea to launch: understanding user needs, defining requirements and setting priorities.",
-                    "Direct technical development using Claude and other AI tools, and review, test and refine the output methodically.",
-                    "Build data operations: collecting product and price data from stores, cleaning and categorizing it, and automating updates.",
-                    "Set up analytics dashboards and KPIs to track platform usage.",
+                    "Lead the product from idea to launch: user needs, requirements and priorities.",
+                    "Direct technical development with AI tools, and review, test and refine the output methodically.",
                     "Oversee day-to-day operations as part of the platform team."
                 ]
-            }
-        ],
-
-        previous: [
-            { title: "Independent Trade", role: "Private shoe distribution business", period: "2019 – 2020" },
-            { title: "Jeddah Delivery", role: "Founder and supervisor of delivery operations for home-based businesses", period: "2017 – 2019" },
-            { title: "Al Jouna Sweets", role: "Pastry chef", period: "2014 – 2017" },
-            { title: "Al Shathliya Dates", role: "Founder, partner and production manager", period: "2011 – 2013" },
-            { title: "Tala Al Joud Dates & Sweets", role: "Pastry chef", period: "2008 – 2010" }
+            },
+            {
+                company: "Atallah Al-Mutrafi Group",
+                role: "Founder, Distribution Business",
+                period: "2019 – 2020",
+                points: ["Founded a private business distributing shoes to retail stores and outlets."]
+            },
+            {
+                company: "Jeddah Delivery Company",
+                role: "Founder & Operations Supervisor",
+                period: "2017 – 2019",
+                points: ["Founded Jeddah Delivery Company and supervised its operations delivering orders for home-based businesses."]
+            },
+            { company: "Al Jouna Sweets", role: "Pastry Chef", period: "2014 – 2017" },
+            { company: "Al Shathliya Dates", role: "Founder, Partner & Production Manager", period: "2011 – 2013" },
+            { company: "Tala Al Joud Dates & Sweets", role: "Pastry Chef", period: "2008 – 2010" }
         ],
 
         scientific: [
-            { title: "Leadership & Management", desc: "Forming and leading teams, assigning and directing tasks, motivating the team and tracking its performance." },
-            { title: "Sales & Marketing", desc: "Managing the full sales cycle, customer service, sales planning and targeting." },
-            { title: "Planning & Strategy", desc: "Building and executing marketing strategies, monitoring results and correcting course." },
-            { title: "Financial Skills", desc: "Managing sales, procurement and inventory operations, and monitoring financial and statistical reports." },
-            { title: "Accounting Systems", desc: "Broad knowledge of accounting systems and how they work, with the ability to market and sell them." },
-            { title: "Data Analysis", desc: "Analyzing data and understanding different metrics, and turning them into practical decisions." },
-            { title: "Technical Skills", desc: "Proficient with computers, smart devices and applications, and quick to learn new tools." }
+            { title: "Leadership & Team Building", desc: "Forming, leading and motivating teams, and training staff to raise their performance and pass on know-how." },
+            { title: "B2B Sales", desc: "Managing the full sales cycle with companies and organizations, from identifying opportunities to closing deals and building long-term relationships." },
+            { title: "Planning & Strategy", desc: "Setting and executing sales and marketing plans, monitoring results and correcting course." },
+            { title: "Accounting & ERP Systems", desc: "Deep understanding of how accounting and ERP systems work, analyzing what companies need from them, and matching each client with the right solution." },
+            { title: "Digital Product Development", desc: "Turning user needs into clear requirements, prioritizing development, and measuring its impact on the user experience." },
+            { title: "Data Analysis", desc: "Analyzing data, metrics and statistical reports, and turning them into practical decisions." }
         ],
 
         tools: [
-            { group: "Data & Analytics", items: ["Google Sheets", "Excel", "Looker Studio"],
-              desc: "Advanced formulas, linked files and charts, plus live reports and KPI dashboards." },
-            { group: "Automation & Development", items: ["Google Apps Script", "Claude"],
-              desc: "Custom functions and web pages in the Google environment to automate processes, and building tools with AI." },
-            { group: "Data Extraction", items: ["Web Scraping"],
-              desc: "Extracting data from websites and turning it into structured, usable databases." },
+            { group: "Data & Analytics", items: ["Google Sheets", "Excel", "Looker Studio", "GA4"],
+              desc: "Using advanced formulas and functions in Google Sheets and Excel, preparing reports, and building analytics dashboards that turn data into live KPIs." },
+            { group: "Automation & Data Integration", items: ["Google Apps Script", "Web Scraping", "API Integration"],
+              desc: "Automating processes and building custom functions in the Google environment, collecting web data and organizing it into databases, and connecting systems via APIs to sync and exchange data." },
+            { group: "AI-Assisted Development", items: ["Claude", "Codex", "GitHub"],
+              desc: "Leading the development of complete digital systems: studying requirements, designing the solution and choosing the right technologies, then building with real code, testing and documenting. These include the Yourdis website, a product-image processing system, a daily-notes system, and a perfume data hub." },
             { group: "Product & Prototyping", items: ["Figma", "Glide"],
               desc: "Designing app and website interfaces and interactive prototypes, and building operational apps with their workflows and reports." },
             { group: "Design & Productivity", items: ["Photoshop", "Illustrator", "Word", "Google Slides"],
@@ -195,7 +202,7 @@ const resumeData = {
         ],
 
         traits: [
-            "Team leadership and building",
+            "Flexibility and adapting to different work environments",
             "Communication and negotiation",
             "Problem solving and analytical thinking",
             "Organization and task management",
