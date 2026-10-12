@@ -1,93 +1,105 @@
 /**
  * سيرة ذاتية - أنس أحمد محمد
- * ملف التحكم في حقن البيانات وتوزيع الأيقونات
+ * يعرض محتوى data.js باللغة المختارة (?lang=ar أو ?lang=en)
  */
 
-// 1. حقن المعلومات الشخصية في العمود الجانبي
-const personal = resumeData.personal;
-document.getElementById('personal-info').innerHTML = `
-    <p><i class="fas fa-phone"></i> ${personal.phone}</p>
-    <p><i class="fas fa-envelope"></i> ${personal.email}</p>
-    <p><i class="fas fa-flag"></i> ${personal.nationality}</p>
-    <p><i class="fas fa-map-marker-alt"></i> ${personal.address}</p>
-    <p><i class="fas fa-calendar-alt"></i> ${personal.birth}</p>
-    <p><i class="fas fa-users"></i> ${personal.status}</p>
-`;
+const $ = (id) => document.getElementById(id);
 
-// 2. حقن نص "من أنا" مع الحفاظ على التنسيق
-document.getElementById('about-me').innerText = resumeData.about;
+function render(lang) {
+    const d = resumeData[lang];
+    const L = d.labels;
 
-// 3. حقن السمات الشخصية والهوايات (قوائم نقطية)
-document.getElementById('personal-traits').innerHTML = resumeData.traits
-    .map(trait => `<li><i class="fas fa-check-circle"></i> ${trait}</li>`)
-    .join('');
+    // اللغة والاتجاه والعنوان
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.title = L.title;
+    document.querySelectorAll('[data-label]').forEach(el => { el.innerText = L[el.dataset.label]; });
 
-document.getElementById('hobbies').innerHTML = resumeData.hobbies
-    .map(hobby => `<li><i class="fas fa-star"></i> ${hobby}</li>`)
-    .join('');
+    // شريط الأدوات
+    $('switch-lang').innerText = L.switchLang;
+    $('download').href = L.pdf;
+    $('download').querySelector('span').innerText = L.download;
 
-// 4. حقن الخبرات والمهارات العلمية (تنسيق كتل نصية)
-const sciIcons = [
-    'fa-users-cog',      // القيادة والإدارة
-    'fa-chart-line',     // المبيعات والتسويق
-    'fa-chess',          // الخطط والاستراتيجيات
-    'fa-calculator',     // المهارات الحسابية
-    'fa-file-invoice-dollar', // البرامج المحاسبية
-    'fa-chart-bar',      // تحليل البيانات
-    'fa-microchip'       // المهارات التكنولوجية
-];
+    // 1. الترويسة
+    const p = d.personal;
+    $('photo').alt = p.name;
+    $('name').innerText = p.name;
+    $('tagline').innerText = p.tagline;
+    $('summary').innerText = p.summary;
+    $('personal-info').innerHTML = [
+        ['fa-phone', `<span class="ltr">${p.phone}</span>`],
+        ['fa-envelope', `<span class="ltr">${p.email}</span>`],
+        ['fa-location-dot', p.address],
+        ['fa-flag', p.nationality],
+        ['fa-calendar', p.birth],
+        ['fa-users', p.status]
+    ].map(([icon, value]) => `<div class="info-item"><i class="fas ${icon}"></i><span>${value}</span></div>`).join('');
 
-document.getElementById('scientific-skills').innerHTML = resumeData.scientific.map((skill, index) => {
-    const [title, desc] = skill.split(':');
-    return `
-        <div class="item-block">
-            <strong><i class="fas ${sciIcons[index]}"></i> ${title}</strong>
-            <p>${desc}</p>
-        </div>`;
-}).join('');
+    // 2. الخبرة العملية (خط زمني بالتفصيل)
+    $('experience').innerHTML = d.experience.map(job => `
+        <article class="job">
+            <div class="job-period">${job.period}</div>
+            <div class="job-body">
+                <h3 class="job-title">${job.company}</h3>
+                <div class="job-role">${job.role}</div>
+                ${job.note ? `<p class="job-note">${job.note}</p>` : ''}
+                <ul class="job-points">${job.points.map(pt => `<li>${pt}</li>`).join('')}</ul>
+            </div>
+        </article>`).join('');
 
-// 5. حقن البرامج والأدوات (الترتيب المطور: برمجيات، تصميم، بيانات)
-const toolIcons = [
-    'fas fa-code',           // Google Apps Script
-    'fas fa-database',       // Web Scraping
-    'fab fa-figma',          // Figma
-    'fas fa-mobile-alt',     // GlideApp
-    'fas fa-table',          // Google Sheets
-    'fas fa-chart-pie',      // Data Studio
-    'fas fa-file-image',     // Photoshop
-    'fas fa-pen-nib',        // Illustrator
-    'fas fa-file-excel',     // Excel
-    'fas fa-file-powerpoint',// Google Slides
-    'fas fa-file-word'       // Word
-];
+    // 3. الخبرات السابقة (سطر لكل وظيفة)
+    $('previous').innerHTML = d.previous.map(job => `
+        <div class="prev-item">
+            <span class="prev-period">${job.period}</span>
+            <span><strong>${job.title}</strong> · ${job.role}</span>
+        </div>`).join('');
 
-document.getElementById('tools-apps').innerHTML = resumeData.tools.map((tool, index) => {
-    const [title, desc] = tool.split(':');
-    return `
-        <div class="item-block">
-            <strong><i class="${toolIcons[index]}"></i> ${title}</strong>
-            <p>${desc}</p>
-        </div>`;
-}).join('');
+    // 4. الخبرات والمهارات العلمية
+    $('scientific-skills').innerHTML = d.scientific.map(skill => `
+        <div class="skill">
+            <h3>${skill.title}</h3>
+            <p>${skill.desc}</p>
+        </div>`).join('');
 
-// 6. حقن المسيرة العملية (الجدول الزمني المهني)
-const workIcons = [
-    'fa-building',    // سمارت لايف
-    'fa-store',       // تجارة حرة
-    'fa-truck',       // توصيل جدة
-    'fa-utensils',    // الجونة للحلويات
-    'fa-box-open',    // الشاذلية للتمور
-    'fa-cookie-bite'  // تالة الجود
-];
+    // 5. البرامج والأدوات (مجموعات)
+    $('tools-apps').innerHTML = d.tools.map(group => `
+        <div class="tool-group">
+            <h3 class="tool-name">${group.group}</h3>
+            <div>
+                <div class="chips">${group.items.map(t => `<span class="chip">${t}</span>`).join('')}</div>
+                <p>${group.desc}</p>
+            </div>
+        </div>`).join('');
 
-document.getElementById('work-history').innerHTML = resumeData.work.map((job, index) => {
-    const [title, desc] = job.split(':');
-    return `
-        <div class="item-block">
-            <strong><i class="fas ${workIcons[index]}"></i> ${title}</strong>
-            <p>${desc}</p>
-        </div>`;
-}).join('');
+    // 6. المهارات الشخصية والتطوير المهني واللغات
+    $('personal-traits').innerHTML = d.traits.map(t => `<li>${t}</li>`).join('');
+    $('development').innerText = d.development;
+    $('languages').innerHTML = d.languages
+        .map(l => `<li><strong>${l.name}</strong><span>${l.level}</span></li>`).join('');
 
-// 7. تحديث تاريخ آخر تعديل في تذييل الصفحة
-document.getElementById('last-update').innerText = resumeData.updateDate;
+    // 7. تاريخ آخر تحديث
+    $('last-update').innerText = d.updateDate;
+}
+
+// اللغة: من الرابط أولاً، ثم آخر اختيار للزائر، ثم العربية
+function initialLang() {
+    const fromUrl = new URLSearchParams(location.search).get('lang');
+    if (fromUrl in resumeData) return fromUrl;
+    try {
+        const saved = localStorage.getItem('cv-lang');
+        if (saved in resumeData) return saved;
+    } catch (e) { /* التخزين غير متاح */ }
+    return 'ar';
+}
+
+let currentLang = initialLang();
+render(currentLang);
+
+$('switch-lang').addEventListener('click', () => {
+    currentLang = currentLang === 'ar' ? 'en' : 'ar';
+    render(currentLang);
+    try { localStorage.setItem('cv-lang', currentLang); } catch (e) { /* التخزين غير متاح */ }
+    const url = new URL(location.href);
+    url.searchParams.set('lang', currentLang);
+    history.replaceState(null, '', url);
+});

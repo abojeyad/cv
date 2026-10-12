@@ -1,66 +1,214 @@
+// محتوى السيرة الذاتية باللغتين. عدّل النص هنا، ثم أعد توليد ملفات PDF (انظر build-pdf.sh).
 const resumeData = {
-    personal: {
-        name: "أنس أحمد محمد",
-        phone: "0568954677",
-        email: "sm@smarterp.top",
-        nationality: "اليمن",
-        address: "السعودية - المدينة المنورة",
-        birth: "1988-10-24 م",
-        status: "متزوج ولدي ولد وبنتان"
+    ar: {
+        labels: {
+            title: "السيرة الذاتية | أنس أحمد محمد",
+            experience: "الخبرة العملية",
+            previous: "الخبرات السابقة",
+            scientific: "الخبرات والمهارات العلمية",
+            tools: "البرامج والأدوات",
+            traits: "المهارات الشخصية",
+            development: "التطوير المهني",
+            languages: "اللغات",
+            updated: "تاريخ آخر تحديث:",
+            switchLang: "English",
+            download: "تحميل PDF",
+            pdf: "pdf/Anas-Ahmed-CV-AR.pdf"
+        },
+        personal: {
+            name: "أنس أحمد محمد",
+            tagline: "إدارة المبيعات وتطوير الأعمال | SaaS والحلول المؤسسية | المنتجات الرقمية",
+            summary: "متخصص في إدارة المبيعات وتطوير الأعمال في قطاع البرمجيات كخدمة (SaaS)، أعمل في بيع أنظمة ERP والمحاسبة والموارد البشرية للشركات، وأسست وأدرت فروعاً في المدينة المنورة والخبر والرياض. شريك مؤسس في منصة يوردس، أقود فيها تطوير المنتج والعمليات. أجمع بين الخبرة التجارية والفهم العملي للأنظمة والبيانات، وأوظّف أدوات الذكاء الاصطناعي في تحويل احتياجات الأعمال إلى حلول تقنية قابلة للتطبيق.",
+            phone: "0568954677",
+            email: "aljahmi2013@gmail.com",
+            address: "السعودية - المدينة المنورة",
+            nationality: "اليمن",
+            birth: "1988-10-24 م",
+            status: "متزوج ولدي ولد وبنتان"
+        },
+
+        // الخبرة العملية الحالية (بالتفصيل)
+        experience: [
+            {
+                company: "سمارت لايف للبرمجيات (SaaS)",
+                role: "مدير منطقة",
+                period: "2020 – الآن",
+                note: "بدأت التعاون مع الشركة منذ 2018 في جلب المبيعات، ثم انضممت إليها رسمياً في 2020.",
+                points: [
+                    "تأسيس فرع المدينة المنورة، ثم إدارة فرعي الخبر والرياض، والعودة لإدارة فرع المدينة المنورة.",
+                    "إدارة مبيعات أنظمة ERP والمحاسبة والموارد البشرية للشركات والمؤسسات.",
+                    "بناء فرق المبيعات وتدريبها، وتطوير أساليب البيع، ومتابعة أداء الفريق والعملاء.",
+                    "فتح أسواق جديدة وبناء علاقات طويلة الأمد مع العملاء.",
+                    "الحصول على جوائز تقديرية في المبيعات."
+                ]
+            },
+            {
+                company: "يوردس (Yourdis)",
+                role: "شريك مؤسس، قيادة تطوير المنتج والعمليات",
+                period: "2026 – الآن",
+                note: "منصة سعودية لمقارنة أسعار العطور الأصلية بين المتاجر الإلكترونية، متاحة على App Store وGoogle Play.",
+                points: [
+                    "قيادة المنتج من الفكرة إلى الإطلاق: فهم احتياجات المستخدمين، وتحديد المتطلبات، وترتيب الأولويات.",
+                    "توجيه التطوير التقني بالاستعانة بـ Claude وأدوات الذكاء الاصطناعي، ومراجعة المخرجات واختبارها وتحسينها بصورة منهجية.",
+                    "بناء عمليات البيانات: جمع بيانات المنتجات والأسعار من المتاجر، وتنظيفها وتصنيفها، وأتمتة تحديثها.",
+                    "إعداد لوحات التحليلات ومؤشرات الأداء لمتابعة استخدام المنصة.",
+                    "متابعة التشغيل والعمليات اليومية ضمن فريق المنصة."
+                ]
+            }
+        ],
+
+        // الخبرات السابقة (سطر لكل وظيفة)
+        previous: [
+            { title: "تجارة حرة", role: "مشروع خاص لتوزيع الأحذية", period: "2019 – 2020" },
+            { title: "توصيل جدة", role: "مؤسس ومشرف عمليات توصيل طلبات الأسر المنتجة", period: "2017 – 2019" },
+            { title: "شركة الجونة للحلويات", role: "معلم حلويات", period: "2014 – 2017" },
+            { title: "مؤسسة الشاذلية للتمور", role: "مؤسس وشريك ومدير إنتاج", period: "2011 – 2013" },
+            { title: "شركة تالة الجود للتمور والحلويات", role: "معلم حلويات", period: "2008 – 2010" }
+        ],
+
+        scientific: [
+            { title: "القيادة والإدارة", desc: "تشكيل فرق العمل وقيادتها، وتوزيع المهام وتوجيهها، وتحفيز الفريق ومتابعة أدائه." },
+            { title: "المبيعات والتسويق", desc: "إدارة دورة البيع كاملة، وخدمة العملاء، ووضع الخطط البيعية والاستهداف." },
+            { title: "الخطط والاستراتيجيات", desc: "بناء الاستراتيجيات التسويقية وتنفيذها، ومراقبة نتائجها وتصحيح مسارها." },
+            { title: "المهارات الحسابية", desc: "إدارة عمليات البيع والتوريد والمخازن، ومراقبة التقارير المالية والإحصائية." },
+            { title: "البرامج المحاسبية", desc: "معرفة واسعة بالأنظمة المحاسبية وآلية العمل عليها، والقدرة على تسويقها وبيعها." },
+            { title: "تحليل البيانات", desc: "تحليل البيانات وفهم المقاييس المختلفة، وتحويلها إلى قرارات واستخدامات عملية." },
+            { title: "المهارات التقنية", desc: "إتقان أجهزة الكمبيوتر والأجهزة الذكية والتطبيقات، وسرعة تعلّم الأدوات الجديدة." }
+        ],
+
+        tools: [
+            { group: "البيانات والتحليلات", items: ["Google Sheets", "Excel", "Looker Studio"],
+              desc: "دوال متقدمة وربط الملفات والرسوم البيانية، وتقارير ولوحات مؤشرات مباشرة." },
+            { group: "الأتمتة والتطوير", items: ["Google Apps Script", "Claude"],
+              desc: "برمجة الدوال المخصصة وصفحات الويب داخل بيئة Google لأتمتة العمليات، وتطوير الأدوات بالذكاء الاصطناعي." },
+            { group: "استخراج البيانات", items: ["Web Scraping"],
+              desc: "استخراج البيانات من المواقع وتحويلها إلى قواعد بيانات منظمة قابلة للاستخدام." },
+            { group: "المنتج والنماذج الأولية", items: ["Figma", "Glide"],
+              desc: "تصميم واجهات التطبيقات والمواقع ونماذج أولية تفاعلية، وبناء تطبيقات تشغيلية بعملياتها وتقاريرها." },
+            { group: "التصميم والإنتاجية", items: ["Photoshop", "Illustrator", "Word", "Google Slides"],
+              desc: "تصاميم دعائية ومطبوعات وبطاقات، ومستندات وعروض تقديمية احترافية." }
+        ],
+
+        traits: [
+            "قيادة الفرق وبناؤها",
+            "التواصل والتفاوض",
+            "حل المشكلات والتفكير التحليلي",
+            "التنظيم وإدارة المهام",
+            "الدقة والاهتمام بالتفاصيل"
+        ],
+
+        development: "أكثر من 100 دورة تدريبية خلال العمل في سمارت لايف، في الإدارة والمبيعات وتطوير الأعمال والأنظمة.",
+
+        languages: [
+            { name: "العربية", level: "اللغة الأم" },
+            { name: "الإنجليزية", level: "جيد" }
+        ],
+
+        updateDate: "20 سبتمبر 2026"
     },
-    about: "ولدت في قرية على أعالي جبال وصاب في اليمن، وعشت حياة الريف بكل بساطتها، فاكتسبت الحكمة والاعتماد على النفس، وتعلمت أن أواجه تحديات الحياة بصبر وعزيمة. نشأت في أسرة محافظة، وبدأت العمل مع والدي في التجارة منذ الصغر، فشكّلت تلك التجربة شخصيتي ومنحتني شغف العمل والاستقلال. أكملت تعليمي المدرسي، لكن الظروف المادية حالت دون إكمال دراستي الجامعية. في سن العشرين انتقلت إلى المملكة العربية السعودية، حيث بدأت رحلتي واكتسبت خبرات متعددة. أعيش بتوازن بين القلب والعقل، وشغوف بالتعلم واكتساب المعرفة، خاصة في المجال التقني. أفكر دائماً في تقديم أفكار ومشاريع ذات أثر، وأسعى لحياة متوازنة مليئة بالإنجاز. أميل إلى التأمل ومجالسة كبار السن، ويأسرني النظر إلى السماء ليلاً، حيث تعيدني النجوم إلى ذكريات القرية وتمنحني شعورًا متجدداً بالحياة.",
-    traits: [
-        "لدي القدرة على إقتراح حلول منطقية للمشكلات والتعامل معها بذكاء.",
-        "أمتلك مهارة التفكير الناقد بأسلوب مميز والوصول إلى نتائج جديدة.",
-        "أتأقلم مع مواقف العمل المختلفة، ولا استطيع العمل تحت الضغط المباشر.",
-        "أحقق إنجازات ونتائج عالية عندما أتمتع بمساحة واسعة من الحرية في العمل.",
-        "يغمرني التقدير والإهتمام ويدفعني لتقديم تفان كبير في كل ما أفعله.",
-        "امتلك مهارة تواصل ممتازة مكتوبة أو شفوية سواء مع الزملاء أو العملاء.",
-        "مهارة العمل الجماعي وبناء روح الفريق الواحد وتنميتها لدى الفريق.",
-        "مهارة التنظيم وإدارة الواجبات واستلام وتسليم المهام بكفاءة عالية.",
-        "اتمتع بمهارة عالية في التفكير خارج الصندوق، والخروج بحلول إبداعية.",
-        "الدقة والاهتمام بتفاصيل التفاصيل لا سيما في المهام التي كلفت بإنجازها.",
-        "أتمتع بحس كاف في تحمل المسؤولية والشجاعة الكاملة في معالجة الأخطاء.",
-        "أحمل من الذكاء العاطفي في فهم مشاعر الآخرين بالقدر الذي يجلعني متوازنا في إدارة المواقف"
-    ],
-    hobbies: [
-        "شغوف جدا في المجال التقني واستخدام الأجهزة الذكية والتطبيقات.",
-        "ممارسة كرة القدم ومتابعة المباريات والألعاب الرياضية الصحية.",
-        "التصميم، حيث أجد متعة في العمل على تصميم التطبيقات ومواقع الويب.",
-        "السفر واكتشاف أماكن جديدة وتكوين علاقات شخصية جديدة.",
-        "أهتم بالتجارة الإلكترونية، وأجد شغفي في زيادة الأعمال والتسويق الرقمي.",
-        "قراءة الشعر والتاريخ ومعرفة عوامل نهضة واندثار الحضارات السابقة.",
-        "أستمتع بقراءة كتب البزنس وإدارة الأعمال والبودكاست ذات الإهتمام لها."
-    ],
-    scientific: [
-        "القيادة والإدارة: لدي القدرة الكاملة على تشكيل وإدارة فريق العمل وإدارة المهام وتوجيهها والتحفيز والمشاركة الفعالة.",
-        "المبيعات والتسويق: أمتلك خبرة كبيرة في مجال المبيعات وخدمات العملاء والتسويق ووضع الخطط البيعية والإستهداف.",
-        "الخطط والاستراتيجيات: لدي القدرة على وضع الخطط والاستراتيجيات التسويقية وتنفيذها ومراقبة نتائجها وتصحيح مسارها.",
-        "المهارات الحسابية: أمتلك خبرة ممتازة في الحسابات وإدارة عمليات البيع والتوريد وإدارة المخازن ومراقبة التقارير المالية الإحصائية.",
-        "البرامج المحاسبية: لدي إطلاع واسع حوال البرامج المحاسبية والية العمل عليها، كما أمتلك القدرة على تسويقها وبيعها.",
-        "تحليل البيانات: أمتلك المهارة الكافية في تحليل البيانات وفهم المقاييس المختلفة واستقراء الاستخدام العملي لها.",
-        "المهارات التكنولوجية: شغوف جدا في المجال التقني وأمتلك خبرة كبيرة في استخدام أجهزة الكمبيوتر والأجهزة الذكية والتطبيقات."
-    ],
-	tools: [
-			"Google Apps Script: أمتلك خبرة قوية في برمجة الأكواد وبناء الدوال المخصصة وتطوير صفحات ويب داخل بيئة جوجل لأتمتة العمليات.",
-			"استخراج البيانات Web Scraping: لدي مهارة عالية في سكرابنج واستخراج البيانات من المواقع وتحويلها إلى قواعد بيانات منظمة للاستفادة منها.",
-			"فيجما Figma: أمتلك خبرة عالية في تصميم التطبيقات والمواقع على برنامج فيجما وعمل بروتوتايب تفاعلي على مستوى عال.",
-			"استخدام منصة جلايد glideApp: لدي الخبرة العالية في بناء التطبيقات ومواقع الويب على منصة جلايد وتنفيذ كافة العمليات والتقارير المطلوبة.",
-			"جداول بيانات جوجل sheets google: أمتلك خبرة عالية جدا في استخدام الدوال المعقدة في جوجل شيت وربطها بملفات أخرى والرسوم البيانية فيه.",
-			"جوجل داتا ستوديو Google Data Studio: إمكانية ربط جداول البيانات مع جوجل دانا ستوديو وإنشاء التقارير والإحصائيات والرسوم البيانية المباشرة.",
-			"فوتوشوب photoshop (Ps): أمتلك خبرة جيدة جدا في العمل على برنامج الفوتوشوب وعمل التصاميم الدعائية والبروشورات وغيرها.",
-			"إليستريتور Illustrator (Ai): أمتلك خلفية جيدة على برنامج إليستريتور وعمل التصاميم اللازمة والكروت الشخصية وغيرها.",
-			"برنامج اكسل Excel (X): لدي خبرة جيدة جدا في استخدام برنامج الأكسل واستخدام الكثير من الدوال البسيطة والمتوسطة فيه.",
-			"جوجل سلايد Google Slides: لدي خبرة كبيرة في استخدام العروض التقديمية من جوجل وتنسيق عرض الشرائح وتقديمها بصيغ مختلفة.",
-			"برنامج وورد Word (W): أمتلك خبرة عالية في استخدام برنامج ميكروسوفت وورد وتنسيق النصوص وكتابة الخطابات ...."
-		],
-    work: [
-        "شركة سمارت لايف: عملت في شركة سمارت لايف مندوب ثم مشرف مبيعات في فرع المدينة والخبر من 2020 حتى الآن.",
-        "تجارة حرة: عملت في مشروع خاص بتوزيع الأحذية قبل جائحة كورونا ثم اضطررت للتوقف مع بداية الأزمة بسبها.",
-        "شركة توصيل جدة: عملت في شركة توصيل جدة كمؤسس ومشرف توصيل طلبات للأسر المنتجة لمدة 3 سنوات 2017-2019.",
-        "شركة الجونة للحلويات: عملت معلم حلويات في شركة الجونة للحلويات في جدة لمدة أربع سنوات من العام 2014 إلى 2017 م.",
-        "مؤسسة الشاذلية للتمور: عملت في مؤسسة الشاذلية للتمور كمؤسس وشريك ومدير انتاج لمدة ثلاث سنوات من 2011 الى 2013 م.",
-        "شركة تالة الجود : عملت معلم حلويات في شركة تالة الجود للتمور والحلويات لمدة ثلاث سنوات في جدة من العام 2008 الى 2010 م."
-    ],
-    updateDate: "1 أبريل 2026"
+
+    en: {
+        labels: {
+            title: "CV | Anas Ahmed Mohammed",
+            experience: "Work Experience",
+            previous: "Earlier Experience",
+            scientific: "Areas of Expertise",
+            tools: "Tools & Software",
+            traits: "Personal Skills",
+            development: "Training",
+            languages: "Languages",
+            updated: "Last updated:",
+            switchLang: "العربية",
+            download: "Download PDF",
+            pdf: "pdf/Anas-Ahmed-CV-EN.pdf"
+        },
+        personal: {
+            name: "Anas Ahmed Mohammed",
+            tagline: "Sales Management & Business Development | SaaS & Enterprise Solutions | Digital Products",
+            summary: "Sales and business development professional in the Software-as-a-Service (SaaS) sector, selling ERP, accounting and HR systems to companies, having founded and managed branches in Madinah, Al Khobar and Riyadh. Co-founder of Yourdis, where I lead product development and operations. I combine commercial experience with a practical understanding of systems and data, and use AI tools to turn business needs into workable technical solutions.",
+            phone: "+966 56 895 4677",
+            email: "aljahmi2013@gmail.com",
+            address: "Madinah, Saudi Arabia",
+            nationality: "Yemeni",
+            birth: "24 Oct 1988",
+            status: "Married, 3 children"
+        },
+
+        experience: [
+            {
+                company: "Smart Life Software (SaaS)",
+                role: "Area Manager",
+                period: "2020 – Present",
+                note: "Worked with the company as a sales collaborator from 2018, then joined officially in 2020.",
+                points: [
+                    "Founded the Madinah branch, then managed the Al Khobar and Riyadh branches before returning to lead Madinah.",
+                    "Manage sales of ERP, accounting and HR systems to companies and organizations.",
+                    "Build and train sales teams, develop sales methods, and track team and client performance.",
+                    "Open new markets and build long-term client relationships.",
+                    "Received sales recognition awards."
+                ]
+            },
+            {
+                company: "Yourdis",
+                role: "Co-founder, Product Development & Operations Lead",
+                period: "2026 – Present",
+                note: "A Saudi platform comparing prices of authentic perfumes across online stores, available on the App Store and Google Play.",
+                points: [
+                    "Lead the product from idea to launch: understanding user needs, defining requirements and setting priorities.",
+                    "Direct technical development using Claude and other AI tools, and review, test and refine the output methodically.",
+                    "Build data operations: collecting product and price data from stores, cleaning and categorizing it, and automating updates.",
+                    "Set up analytics dashboards and KPIs to track platform usage.",
+                    "Oversee day-to-day operations as part of the platform team."
+                ]
+            }
+        ],
+
+        previous: [
+            { title: "Independent Trade", role: "Private shoe distribution business", period: "2019 – 2020" },
+            { title: "Jeddah Delivery", role: "Founder and supervisor of delivery operations for home-based businesses", period: "2017 – 2019" },
+            { title: "Al Jouna Sweets", role: "Pastry chef", period: "2014 – 2017" },
+            { title: "Al Shathliya Dates", role: "Founder, partner and production manager", period: "2011 – 2013" },
+            { title: "Tala Al Joud Dates & Sweets", role: "Pastry chef", period: "2008 – 2010" }
+        ],
+
+        scientific: [
+            { title: "Leadership & Management", desc: "Forming and leading teams, assigning and directing tasks, motivating the team and tracking its performance." },
+            { title: "Sales & Marketing", desc: "Managing the full sales cycle, customer service, sales planning and targeting." },
+            { title: "Planning & Strategy", desc: "Building and executing marketing strategies, monitoring results and correcting course." },
+            { title: "Financial Skills", desc: "Managing sales, procurement and inventory operations, and monitoring financial and statistical reports." },
+            { title: "Accounting Systems", desc: "Broad knowledge of accounting systems and how they work, with the ability to market and sell them." },
+            { title: "Data Analysis", desc: "Analyzing data and understanding different metrics, and turning them into practical decisions." },
+            { title: "Technical Skills", desc: "Proficient with computers, smart devices and applications, and quick to learn new tools." }
+        ],
+
+        tools: [
+            { group: "Data & Analytics", items: ["Google Sheets", "Excel", "Looker Studio"],
+              desc: "Advanced formulas, linked files and charts, plus live reports and KPI dashboards." },
+            { group: "Automation & Development", items: ["Google Apps Script", "Claude"],
+              desc: "Custom functions and web pages in the Google environment to automate processes, and building tools with AI." },
+            { group: "Data Extraction", items: ["Web Scraping"],
+              desc: "Extracting data from websites and turning it into structured, usable databases." },
+            { group: "Product & Prototyping", items: ["Figma", "Glide"],
+              desc: "Designing app and website interfaces and interactive prototypes, and building operational apps with their workflows and reports." },
+            { group: "Design & Productivity", items: ["Photoshop", "Illustrator", "Word", "Google Slides"],
+              desc: "Promotional designs, print materials and business cards, plus professional documents and presentations." }
+        ],
+
+        traits: [
+            "Team leadership and building",
+            "Communication and negotiation",
+            "Problem solving and analytical thinking",
+            "Organization and task management",
+            "Accuracy and attention to detail"
+        ],
+
+        development: "100+ training courses during my time at Smart Life, in management, sales, business development and systems.",
+
+        languages: [
+            { name: "Arabic", level: "Native" },
+            { name: "English", level: "Good" }
+        ],
+
+        updateDate: "20 September 2026"
+    }
 };
